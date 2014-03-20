@@ -5,7 +5,7 @@
 	Author: Codeinwp
 	Author URI: http://themes.codeinwp.com
 	Version: 1.0.6
-	Tags: blue, gray, light, white, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready
+	Tags: blue, gray, light, white, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, custom-header, custom-menu
 	License: GNU General Public License
 	License URI: license.txt
 	
@@ -171,7 +171,7 @@ img {
 	text-align: left; 
 	margin-top: 0; 
 	padding: 0; 
-	color: #fff; 
+	color: #000; 
 	z-index: 9999; 
 	height: 100%; 
 }
@@ -742,11 +742,11 @@ footer .copyright { font-size: 1.2rem;}
 /* Article, Elements and Typography Styles */
 
 /* Links Styles */
-.singlePost a { 
+.singlePost a , .commentDetails a{ 
 	color: #50c1e9; 
 	text-decoration: none; 
 }
-.singlePost a:hover { text-decoration: underline; }
+.singlePost a:hover, .commentDetails a:hover { text-decoration: underline; }
 
 /* Excrept Styles */
 .singlePost .articleExcrept { 
@@ -768,59 +768,59 @@ footer .copyright { font-size: 1.2rem;}
 }
 
 /* Headings Styles */
-.singlePost h1, 
-.singlePost h2,
-.singlePost h3,
-.singlePost h4,
-.singlePost h5,
-.singlePost h6 { 
+.singlePost h1, .commentDetails h1,
+.singlePost h2, .commentDetails h2,
+.singlePost h3, .commentDetails h3,
+.singlePost h4, .commentDetails h4,
+.singlePost h5, .commentDetails h5,
+.singlePost h6, .commentDetails h6{ 
 	font-weight: 600; 
 	margin: 1rem 0; 
 	padding:0;  
 	color: #5d5d5d;
 }
-.singlePost h1 { font-size: 2.3rem; }
-.singlePost h2 { font-size: 2rem; }
-.singlePost h3 { font-size: 1.8rem; }
-.singlePost h4 { font-size: 1.6rem; }
-.singlePost h5 { font-size: 1.4rem; }
-.singlePost h6 { font-size: 1.2rem; }
+.singlePost h1, .commentDetails h1 { font-size: 2.3rem; }
+.singlePost h2, .commentDetails h2 { font-size: 2rem; }
+.singlePost h3, .commentDetails h3 { font-size: 1.8rem; }
+.singlePost h4, .commentDetails h4 { font-size: 1.6rem; }
+.singlePost h5, .commentDetails h5 { font-size: 1.4rem; }
+.singlePost h6, .commentDetails h6 { font-size: 1.2rem; }
 
-.singlePost blockquote {
+.singlePost blockquote, .commentDetails blockquote {
 	padding: 10px;
 	font-style: italic;
 }
-.singlePost cite {
+.singlePost cite, .commentDetails cite {
 	font-size: 1.2rem;
 	color: #999;
 }
-.singlePost cite:before {
+.singlePost cite:before, .commentDetails cite:before {
 	content: "\A";
     white-space: pre;
 }
-.singlePost ul, 
-.singlePost li, 
-.singlePost ol,
-.singlePost dl,
-.singlePost dd { 
+.singlePost ul, .commentDetails ul, 
+.singlePost li, .commentDetails li,
+.singlePost ol, .commentDetails ol,
+.singlePost dl, .commentDetails dl,
+.singlePost dd, .commentDetails dd { 
 	margin: 1.4rem 1.5rem;
 	list-style: inherit;
 }
 /* Table Styles */
-.singlePost table { 
+.singlePost table, .commentDetails table { 
 	width: 100%; 
 	border-collapse: collapse; 
 	margin: 3rem 0px;
 }
-.singlePost tr:nth-of-type(odd) { background: #fcfcfc; }
-.singlePost th { 
+.singlePost tr:nth-of-type(odd), .commentDetails tr:nth-of-type { background: #fcfcfc; }
+.singlePost th, .commentDetails th { 
 	background: #e8e8e8; 
 	color: #5d5d5d; 
 	font-weight: bold; 
 	text-align: center; 
 }
-.singlePost td,
-.singlePost th { 
+.singlePost td, .commentDetails td,
+.singlePost th, .commentDetails th { 
 	padding: 0.6rem; 
 	border: 1px solid #ccc; 
 	text-align: center; 

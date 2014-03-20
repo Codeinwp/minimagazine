@@ -13,75 +13,76 @@
 
 get_header();
 
-$optionsdb = get_option("theme_options_optionsdb");
-	if((isset($optionsdb['slide_image1']) && $optionsdb['slide_image1'] != '') || (isset($optionsdb['slider_title2']) && $optionsdb['slider_title2'] == '') || (isset($optionsdb['slide_image3']) && $optionsdb['slide_image3'] != '')):
+if(get_theme_mod('slide1_image') || get_theme_mod('slide2_image') || get_theme_mod('slide3_image')):
 ?>
 	<section id="sliderOuter">
 		<div id="slideshow">
 		
 			<!-- slide no#1 -->
-			<?php if(isset($optionsdb['slide_image1']) && $optionsdb['slide_image1'] != ''): ?>
+			<?php if(get_theme_mod('slide1_image')): ?>
 			<div class="slide">
 				<div class="slideContainer container">
 					<?php 
-						if(isset($optionsdb['slider_title1']) && $optionsdb['slider_title1'] != '')
-							echo '<h1>'.$optionsdb['slider_title1'].'</h1>';
+						if(get_theme_mod('slide1_title'))
+							echo '<h1>'.get_theme_mod('slide1_title').'</h1>';
 					
-						if(isset($optionsdb['slider_text1']) && $optionsdb['slider_text1'] != '')
-							echo '<p>'.$optionsdb['slider_text1'].'</p>';
+						if(get_theme_mod('slide1_text'))
+							echo '<p>'.get_theme_mod('slide1_text').'</p>';
 						 
-						if(isset($optionsdb['slider_button1']) && $optionsdb['slider_button1'] != '')
-							echo '<div class="button"><a href="'.$optionsdb['slider_button_link_1'].'">'.$optionsdb['slider_button1'].'</a></div>';
+						if(get_theme_mod('slide1_button_text') && get_theme_mod('slide1_button_link'))
+							echo '<div class="button"><a href="'.get_theme_mod('slide1_button_link').'">'.get_theme_mod('slide1_button_text').'</a></div>';
 		
 					?>
 				</div><!-- end .slideContainer -->
 				<div class="overlay"></div>
 				<?php
-					echo '<img src="'.$optionsdb['slide_image1'].'" alt="'.get_bloginfo('name').'">';
+					echo '<img src="'.get_theme_mod('slide1_image').'" alt="'.get_bloginfo('name').'">';
 				?>	
 			</div><!-- end .slide -->
 			<?php endif; ?>
 	
 			<!-- slide no#2 -->
-			<?php if(isset($optionsdb['slide_image2']) && $optionsdb['slide_image2'] != '') : ?>
+			<?php if(get_theme_mod('slide2_image')): ?>
 			<div class="slide">
 				<div class="slideContainer container">
 					<?php 
-						if(isset($optionsdb['slider_title2']) && $optionsdb['slider_title2'] != '')
-							echo '<h1>'.$optionsdb['slider_title2'].'</h1>';
-						
-						if(isset($optionsdb['slider_text2']) && $optionsdb['slider_text2'] != '')
-							echo '<p>'.$optionsdb['slider_text2'].'</p>';
-				
-						if(isset($optionsdb['slider_button2']) && $optionsdb['slider_button2'] != '')
-							echo '<div class="button"><a href="'.$optionsdb['slider_button_link_2'].'">'.$optionsdb['slider_button2'].'</a></div>';
+						if(get_theme_mod('slide2_title'))
+							echo '<h1>'.get_theme_mod('slide2_title').'</h1>';
+					
+						if(get_theme_mod('slide2_text'))
+							echo '<p>'.get_theme_mod('slide2_text').'</p>';
+						 
+						if(get_theme_mod('slide2_button_text') && get_theme_mod('slide2_button_link'))
+							echo '<div class="button"><a href="'.get_theme_mod('slide2_button_link').'">'.get_theme_mod('slide2_button_text').'</a></div>';
+		
 					?>
 				</div><!-- end .slideContainer -->
 				<div class="overlay"></div>
 				<?php
-					echo '<img src="'.$optionsdb['slide_image2'].'" alt="'.get_bloginfo('name').'">';
+					echo '<img src="'.get_theme_mod('slide2_image').'" alt="'.get_bloginfo('name').'">';
 				?>
 			</div><!-- end .slide -->
 			<?php endif; ?>
 			
 			<!-- slide no#3 -->
-			<?php if(isset($optionsdb['slide_image3']) && $optionsdb['slide_image3'] != '') : ?>
+			<?php if(get_theme_mod('slide3_image')): ?>
 			<div class="slide">
 				<div class="slideContainer container">
 					<?php 
-						if(isset($optionsdb['slider_title3']) && $optionsdb['slider_title3'] != '')
-							echo '<h1>'.$optionsdb['slider_title3'].'</h1>';
+						if(get_theme_mod('slide3_title'))
+							echo '<h1>'.get_theme_mod('slide3_title').'</h1>';
+					
+						if(get_theme_mod('slide3_text'))
+							echo '<p>'.get_theme_mod('slide3_text').'</p>';
 						 
-						if(isset($optionsdb['slider_text3']) && $optionsdb['slider_text3'] != '')
-							echo '<p>'.$optionsdb['slider_text3'].'</p>';
-						
-						if(isset($optionsdb['slider_button3']) && $optionsdb['slider_button3'] != '')
-							echo '<div class="button"><a href="'.$optionsdb['slider_button_link_3'].'">'.$optionsdb['slider_button3'].'</a></div>';
+						if(get_theme_mod('slide3_button_text') && get_theme_mod('slide3_button_link'))
+							echo '<div class="button"><a href="'.get_theme_mod('slide3_button_link').'">'.get_theme_mod('slide3_button_text').'</a></div>';
+		
 					?>
 				</div><!-- end .slideContainer -->
 				<div class="overlay"></div>
 				<?php
-						echo '<img src="'.$optionsdb['slide_image3'].'" alt="'.get_bloginfo('name').'">';
+					echo '<img src="'.get_theme_mod('slide3_image').'" alt="'.get_bloginfo('name').'">';
 				?>
 			</div><!-- end .slide -->
 			<?php endif; ?>
@@ -92,6 +93,7 @@ $optionsdb = get_option("theme_options_optionsdb");
 		</div>
 	</section><!-- slider -->
 	<?php endif; ?>
+
 	<section id="mainContentWrapper" class="container">
 		<section id="mainContent" class="eleven columns">
 			<section id="postsListing">

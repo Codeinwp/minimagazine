@@ -8,49 +8,48 @@
  */
 	
 ?>
-<?php global  $optionsdb;  ?>
-
 	<footer>
 		<section id="footerContent" class="container">
 			<div class="footerLogo three columns">
-				<?php							
-						if(isset($optionsdb['logo_footer']) && $optionsdb['logo_footer'] != '') {								
-							if(isset($optionsdb['logo_footer_text']) && $optionsdb['logo_footer_text'] != '')									
-								echo '<img src="'.$optionsdb['logo_footer'].'" alt="'.$optionsdb['logo_footer_text'].'">';								
-							else									
-								echo '<img src="'.$optionsdb['logo_footer'].'" alt="'.bloginfo('name').'">';							
-						}
-						else
-							echo '<img src="'.get_template_directory_uri().'/images/footer_logo.png" alt="Logo"/>';
-					?>
+				<?php			
+					if(get_theme_mod('codeinwp_footerlogo')):
+						if(get_theme_mod('codeinwp_footerlogo_text')):
+							echo '<img src="'.get_theme_mod('codeinwp_footerlogo').'" alt="'.get_theme_mod('codeinwp_footerlogo_text').'">';		
+						else:
+							echo '<img src="'.get_theme_mod('codeinwp_footerlogo').'" alt="'.get_bloginfo('name').'">';
+						endif;
+					else:
+						echo '<img src="'.get_template_directory_uri().'/images/footer_logo.png" alt="'.get_bloginfo('name').'" />';
+					endif;
+			
+				?>
 			</div><!-- end footerLogo -->
 
 			<div class="footerMetaData eight columns">
 				<div class="footerSocialIcons">
 					<ul>
-						<?php 	
-						if(isset($optionsdb['twitter']) && $optionsdb['twitter'] != '')		
-							echo "<li><a href='".$optionsdb['twitter']."' ><i class='icon-twitter-sign'></i></a></li>";	
+						<?php 
+						if(get_theme_mod('codeinwp_fb')):
+							echo "<li><a href='".get_theme_mod('codeinwp_fb')."' ><i class='icon-facebook-sign'></i></a></li>";	
+						endif;
 						
+						if(get_theme_mod('codeinwp_tw')):
+							echo "<li><a href='".get_theme_mod('codeinwp_tw')."' ><i class='icon-twitter-sign'></i></a></li>";	
+						endif;
 						
-						if(isset($optionsdb['facebook']) && $optionsdb['facebook'] != '')		
-							echo "<li><a href='".$optionsdb['facebook']."' ><i class='icon-facebook-sign'></i></a></li>";	
+						if(get_theme_mod('codeinwp_rss')):
+							echo "<li><a href='".get_theme_mod('codeinwp_rss')."' ><i class='icon-rss-sign'></i></a></li>";	
+						endif;
 						
-							
-						if(isset($optionsdb['linkedin']) && $optionsdb['linkedin'] != '')		
-							echo "<li><a href='".$optionsdb['linkedin']."' ><i class='icon-linkedin-sign'></i></a></li>";	
-							
-							
-						if(isset($optionsdb['rss']) && $optionsdb['rss'] != '')		
-							echo "<li><a href='".$optionsdb['rss']."' ><i class='icon-rss-sign'></i></a></li>";	
+						if(get_theme_mod('codeinwp_linkedin')):
+							echo "<li><a href='".get_theme_mod('codeinwp_linkedin')."' ><i class='icon-linkedin-sign'></i></a></li>";	
+						endif;
 						
-							
-						if(isset($optionsdb['pinterest']) && $optionsdb['pinterest'] != '')		
-							echo "<li><a href='".$optionsdb['pinterest']."' ><i class='icon-pinterest-sign'></i></a></li>";	
-							
-							
+						if(get_theme_mod('codeinwp_pinterest')):
+							echo "<li><a href='".get_theme_mod('codeinwp_pinterest')."' ><i class='icon-pinterest-sign'></i></a></li>";	
+						endif;
+						
 						?>
-					
 					</ul>
 				</div><!-- footerSocialIcons -->
 
@@ -59,10 +58,11 @@
 				</div><!-- end .footerMenu -->
 
 				<?php	
-					if(isset($optionsdb['copyright']) && $optionsdb['copyright'] != '') 		
-						echo '<span class="copyright">'.$optionsdb['copyright'].'</span>';	
-					else
-						echo '<span class="copyright"> &copy; 2013 Minimag WordPress Theme</span>';	
+					if(get_theme_mod('codeinwp_copyright')):
+						echo '<span class="copyright">'.get_theme_mod('codeinwp_copyright').'</span>';	
+					else:
+						echo '<span class="copyright"> &copy; '.date('Y').' Minimag WordPress Theme</span>';
+					endif;
 				?>			
 				
 			</div><!-- end .footerMetaData -->
