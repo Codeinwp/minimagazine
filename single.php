@@ -46,6 +46,15 @@ global $optionsdb;
 				
 			</article><!-- end .singlePost -->
 
+			<div class="postDetailsSingle">
+				<div class="postLabels">
+					<?php the_category(', '); ?>
+				</div><!-- end .postLabels -->
+				<div class="postTags">
+					<?php the_tags(); ?>
+				</div><!-- end .postTags -->
+			</div><!-- end .postDetails -->
+
 			<section id="postAuthor">
 				<header><h2><?php _e('About the Author','cwp'); ?></h2></header>
 				<div class="authorInfo">

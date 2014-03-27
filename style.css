@@ -22,6 +22,19 @@
 /* Font Declarations */
 
 html { font-size: 62.5%; }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
 body { 
 	font-family: "Open Sans", Helvetica, Arial, sans-serif; 
 	-ms-word-wrap: break-word; 
@@ -357,7 +370,7 @@ img {
 #postsListing .recentPost .postDetails .postLabels { 
 	float: left; 
 	padding-left: 2.1rem; 
-	background: url("images/label_icon.png") no-repeat top left; 
+	background: url("images/folder_icon.png") no-repeat top left; 
 	font-size: 1.3rem; 
 	color: #c3c3c3; 
 	margin-top: 9px; 
@@ -366,7 +379,6 @@ img {
 }
 #postsListing .recentPost .postDetails .postLabels a { 
 	color: #c3c3c3; 
-	margin-right: 5px;
 }
 #postsListing .recentPost .postDetails .postLabels a:hover { color: #9b9b9b; }
 #postsListing .recentPost .postDetails .postLink { 
@@ -758,6 +770,60 @@ footer .copyright { font-size: 1.2rem;}
 	line-height: 2.1rem; 
 	color: #555; 
 }
+.postDetailsSingle { 
+	width: 100%; 
+	height: auto;
+	overflow: hidden;
+	padding-bottom: 1rem;
+	background: #fafafa; 
+	margin-top: 1rem;
+}
+.postDetailsSingle .postLabels { 
+	float: left;
+	padding-left: 2.1rem;
+	background: url("images/folder_icon.png") no-repeat top left;
+	font-size: 1.3rem;
+	color: #c3c3c3;
+	margin-top: 9px;
+	margin-left: 1rem;
+	width: 100%;
+	margin-bottom: 5px;
+}
+.postDetailsSingle .postLabels a { 
+	color: #c3c3c3;
+	text-decoration: none;
+}
+.postDetailsSingle .postLabels a:hover { color: #9b9b9b; }
+.postDetailsSingle .postLink { 
+	float: right; 
+	text-transform: uppercase; 
+	font-size: 1.4rem; 
+	font-weight: bold; 
+	margin: 1rem 1rem 0 0;
+}
+.postDetailsSingle .postLink a { color: #9b9b9b; }
+
+
+.postDetailsSingle .postTags { 
+	float: left; 
+	padding-left: 2.1rem; 
+	background: url("images/label_icon.png") no-repeat top left; 
+	font-size: 1.3rem; 
+	color: #c3c3c3; 
+	margin-top: 9px; 
+	margin-left: 1rem;
+	width: 100%;
+}
+.postDetailsSingle .postTags a { 
+	color: #c3c3c3;
+	text-decoration: none;
+}
+.postDetailsSingle .postTags a:hover { color: #9b9b9b; }
+.cont-up{
+	height: 3px; 
+	margin-top: 3rem;
+}
+
 
 /* Image Styles */
 .singlePost img { 
@@ -801,11 +867,30 @@ footer .copyright { font-size: 1.2rem;}
 .singlePost ul, .commentDetails ul, 
 .singlePost li, .commentDetails li,
 .singlePost ol, .commentDetails ol,
-.singlePost dl, .commentDetails dl,
-.singlePost dd, .commentDetails dd { 
+.commentDetails dl,
+.commentDetails dd { 
 	margin: 1.4rem 1.5rem;
 	list-style: inherit;
 }
+.singlePost ul {
+	list-style: disc;
+}
+.singlePost ol{
+	list-style: decimal;
+}
+.singlePost ol ol {
+	list-style: upper-alpha;
+}
+.singlePost ol ol ol {
+	list-style: lower-roman;
+}
+ .singlePostol ol ol ol {
+	list-style: lower-alpha;
+}
+strong{
+	font-weight: bold;
+}
+
 /* Table Styles */
 .singlePost table, .commentDetails table { 
 	width: 100%; 
@@ -835,10 +920,15 @@ footer .copyright { font-size: 1.2rem;}
 	float: left; 
 	margin-top: 1rem;
 }
-p { 
+p{ 
 	text-align: justify; 
 	line-height: 2.3rem; 
 	margin: 1.5rem 0; 
+	font-size: 1.4rem; 
+}
+span{ 
+	text-align: justify; 
+	line-height: 2.3rem; 
 	font-size: 1.4rem; 
 }
 
@@ -1315,19 +1405,42 @@ a.readmore i { display: none; }
 .site-content .gallery dd {
 	margin: 0;
 }
+.singlePost dt{
+	font-weight: bold;
+	line-height: 1.714285714;
+}
+.singlePost dl{
+	margin: 0 24px;
+	margin: 0 1.714285714rem;
+}
+.singlePost dd{
+	line-height: 1.714285714;
+	margin-bottom: 24px;
+	margin-bottom: 1.714285714rem;
+}
+.singlePost address{
+	display: block;
+	line-height: 1.714285714;
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+}
+
 
 /* Alignment */
-.alignleft {
+.alignleft,
+img.alignleft {
 	display: inline;
 	float: left;
 	margin-right: 1.5rem;
 }
-.alignright {
+.alignright,
+img.alignright  {
 	display: inline;
 	float: right;
 	margin-left: 1.5rem;
 }
-.aligncenter {
+.aligncenter,
+img.aligncenter {
 	clear: both;
 	display: block;
 	margin: 0 auto;
@@ -1337,7 +1450,6 @@ pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 1.2rem;
-	font-size: 1rem;
 	line-height: 1.6rem;
 	margin-bottom: 1.6rem;
 	padding: 1.6em;
