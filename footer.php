@@ -18,8 +18,6 @@
 						else:
 							echo '<img src="'.get_theme_mod('codeinwp_footerlogo').'" alt="'.get_bloginfo('name').'">';
 						endif;
-					else:
-						echo '<img src="'.get_template_directory_uri().'/images/footer_logo.png" alt="'.get_bloginfo('name').'" />';
 					endif;
 			
 				?>

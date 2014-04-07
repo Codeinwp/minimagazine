@@ -34,7 +34,10 @@
 						echo '<img src="'.get_theme_mod('codeinwp_logo').'" alt="'.get_bloginfo('name').'">';
 					endif;
 				else:
-					echo '<img src="'.get_template_directory_uri().'/images/logo.png" alt="'.get_bloginfo('name').'"/>';
+					echo '<div class="main-title">';
+						echo '<h1><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+						echo '<h2><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
+					echo '</div>';
 				endif;
                 	
 				?>

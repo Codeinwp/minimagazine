@@ -22,7 +22,7 @@ function cwp_customize_register( $wp_customize ) {
     	'description' => __('Logo details','cwp'),
 	) );
 
-	$wp_customize->add_setting( 'codeinwp_logo', array('default' => get_template_directory_uri()."/images/logo.png") );
+	$wp_customize->add_setting( 'codeinwp_logo' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
 	    'label'    => __( 'Upload your logo file', 'cwp' ),
 	    'section'  => 'codeinwp_logo_section',
@@ -46,7 +46,7 @@ function cwp_customize_register( $wp_customize ) {
     	'description' => __('Upload your footer logo file','cwp'),
 	) );
 
-	$wp_customize->add_setting( 'codeinwp_footerlogo', array('default' => get_template_directory_uri()."/images/footer_logo.png") );
+	$wp_customize->add_setting( 'codeinwp_footerlogo' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_footerlogo', array(
 	    'label'    => __( 'Footer logo', 'cwp' ),
 	    'section'  => 'codeinwp_footerlogo_section',
@@ -82,7 +82,7 @@ function cwp_customize_register( $wp_customize ) {
 	) );
 	
 	/* Facebook */
-	$wp_customize->add_setting( 'codeinwp_fb',array('sanitize_callback' => 'cwp_sanitize_text') );
+	$wp_customize->add_setting( 'codeinwp_fb',array('sanitize_callback' => 'esc_url_raw') );
 	$wp_customize->add_control( 'codeinwp_fb', array(
 	    'label'    => __( 'Enter your facebook link', 'cwp' ),
 	    'section'  => 'codeinwp_socials_section',
@@ -90,7 +90,7 @@ function cwp_customize_register( $wp_customize ) {
 	) );
 	
 	/* Twitter */
-	$wp_customize->add_setting( 'codeinwp_tw',array('sanitize_callback' => 'cwp_sanitize_text') );
+	$wp_customize->add_setting( 'codeinwp_tw',array('sanitize_callback' => 'esc_url_raw') );
 	$wp_customize->add_control( 'codeinwp_tw', array(
 	    'label'    => __( 'Enter your Twitter link', 'cwp' ),
 	    'section'  => 'codeinwp_socials_section',
@@ -98,7 +98,7 @@ function cwp_customize_register( $wp_customize ) {
 	) );
 	
 	/* RSS */
-	$wp_customize->add_setting( 'codeinwp_rss',array('sanitize_callback' => 'cwp_sanitize_text') );
+	$wp_customize->add_setting( 'codeinwp_rss',array('sanitize_callback' => 'esc_url_raw') );
 	$wp_customize->add_control( 'codeinwp_rss', array(
 	    'label'    => __( 'Enter your RSS link', 'cwp' ),
 	    'section'  => 'codeinwp_socials_section',
@@ -106,7 +106,7 @@ function cwp_customize_register( $wp_customize ) {
 	) );
 	
 	/* Linkedin */
-	$wp_customize->add_setting( 'codeinwp_linkedin',array('sanitize_callback' => 'cwp_sanitize_text') );
+	$wp_customize->add_setting( 'codeinwp_linkedin',array('sanitize_callback' => 'esc_url_raw') );
 	$wp_customize->add_control( 'codeinwp_linkedin', array(
 	    'label'    => __( 'Enter your linkedin link', 'cwp' ),
 	    'section'  => 'codeinwp_socials_section',
@@ -114,7 +114,7 @@ function cwp_customize_register( $wp_customize ) {
 	) );
 	
 	/* Pinterest */
-	$wp_customize->add_setting( 'codeinwp_pinterest',array('sanitize_callback' => 'cwp_sanitize_text') );
+	$wp_customize->add_setting( 'codeinwp_pinterest',array('sanitize_callback' => 'esc_url_raw') );
 	$wp_customize->add_control( 'codeinwp_pinterest', array(
 	    'label'    => __( 'Enter your pinterest link', 'cwp' ),
 	    'section'  => 'codeinwp_socials_section',
@@ -160,7 +160,7 @@ function cwp_customize_register( $wp_customize ) {
 		'priority'    => 4
 	) );
 	
-	$wp_customize->add_setting( 'slide1_button_link',array('sanitize_callback' => 'cwp_sanitize_text') );
+	$wp_customize->add_setting( 'slide1_button_link',array('sanitize_callback' => 'esc_url_raw') );
 	$wp_customize->add_control( 'slide1_button_link', array(
 	    'label'    => __( 'First slide link for button', 'cwp' ),
 	    'section'  => 'codeinwp_slider_section',
@@ -201,7 +201,7 @@ function cwp_customize_register( $wp_customize ) {
 		'priority'    => 9
 	) );
 	
-	$wp_customize->add_setting( 'slide2_button_link',array('sanitize_callback' => 'cwp_sanitize_text') );
+	$wp_customize->add_setting( 'slide2_button_link',array('sanitize_callback' => 'esc_url_raw') );
 	$wp_customize->add_control( 'slide2_button_link', array(
 	    'label'    => __( 'Second slide link for button', 'cwp' ),
 	    'section'  => 'codeinwp_slider_section',
@@ -242,7 +242,7 @@ function cwp_customize_register( $wp_customize ) {
 		'priority'    => 14
 	) );
 	
-	$wp_customize->add_setting( 'slide3_button_link',array('sanitize_callback' => 'cwp_sanitize_text') );
+	$wp_customize->add_setting( 'slide3_button_link',array('sanitize_callback' => 'esc_url_raw') );
 	$wp_customize->add_control( 'slide3_button_link', array(
 	    'label'    => __( 'Third slide link for button', 'cwp' ),
 	    'section'  => 'codeinwp_slider_section',

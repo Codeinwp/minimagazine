@@ -49,6 +49,23 @@ img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
+
+.main-title {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+}
+.main-title h1 {
+	font-size: 2.6rem;
+}
+.main-title h2 {
+	font-size: 1.4rem;
+}
+.main-title a {
+	color: #646464;
+	text-decoration:none;
+}
+
 /* Main Navigation */
 #main-nav { padding: 3rem 0;}
 #main-nav .menu { padding-top: 1rem; }
