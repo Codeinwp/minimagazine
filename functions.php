@@ -19,7 +19,7 @@ if ( ! isset( $content_width ) )
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-  $optionsdb = array();
+
 function cwp_setup() {
 
 	/**
@@ -70,12 +70,6 @@ function cwp_setup() {
      * Enable support for Post Formats
      */
     add_theme_support( 'post-formats', array( 'aside', 'gallery','link','image','quote','status','video','audio','chat' ) );
-	
-
-	require( get_template_directory() . '/admin/functions.php' );
-	
-	global $optionsdb;
-	$optionsdb = cwp(); 
 
 }
 
@@ -95,7 +89,6 @@ function cwp_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'cwp_widgets_init' );
-
 
 /**
  * Set excerpt length
@@ -146,7 +139,13 @@ add_action( 'wp_enqueue_scripts', 'cwp_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+$args = array(
+		'width'         => 980,
+		'height'        => 60,
+		'default-image' => '',
+		'uploads'       => true,
+	);
+add_theme_support( 'custom-header', $args );
 
 /**
  * Custom template tags for this theme.
@@ -258,5 +257,3 @@ function cwp_next_posts_link_attributes(){
 function cwp_prev_posts_link_attributes(){
    return 'class="prev"';
 }
-
-

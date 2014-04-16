@@ -11,15 +11,15 @@
  */
 
 get_header(); 
-global $optionsdb;
 ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
 	<?php 
-		if(isset($optionsdb['header_image']) && $optionsdb['header_image'] != '')
-			echo '<section id="headerOuter" style="background:url('.$optionsdb['header_image'].');">';
-		else
+		if(get_theme_mod('header_image')):
+			echo '<section id="headerOuter" style="background:url('.get_theme_mod('header_image').');">';
+		else:
 			echo '<section id="headerOuter">';
+		endif;
 	?>
 		<header>
 			<div class="headerOuterContent container">

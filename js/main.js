@@ -1,5 +1,4 @@
-jQuery(function() {
-
+jQuery(window).load(function() {
 	// Slider jQuery Cycle Script
 	jQuery("#slideshow").cycle({
 		fx:    'fade',
@@ -9,6 +8,8 @@ jQuery(function() {
     	next: ".sliderNav .next",
     	prev: ".sliderNav .prev"
 	});
+});
+jQuery(function() {
 
 	// TipTip Tooltip Script
 	jQuery(".soc-icon").tipTip({

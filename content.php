@@ -27,7 +27,7 @@
 							</div><!-- end .postExcrept -->
 							<div class="postDetails">
 								<div class="postLabels">
-									<?php the_tags(); ?>
+									<?php the_category(', '); ?>
 								</div><!-- end .postLabels -->
 
 								<div class="postLink">

@@ -5,7 +5,7 @@
 	Author: Codeinwp
 	Author URI: http://themes.codeinwp.com
 	Version: 1.0.6
-	Tags: blue, gray, light, white, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready
+	Tags: blue, gray, light, white, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, custom-header, custom-menu
 	License: GNU General Public License
 	License URI: license.txt
 	
@@ -22,6 +22,19 @@
 /* Font Declarations */
 
 html { font-size: 62.5%; }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
 body { 
 	font-family: "Open Sans", Helvetica, Arial, sans-serif; 
 	-ms-word-wrap: break-word; 
@@ -36,6 +49,23 @@ img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
+
+.main-title {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+}
+.main-title h1 {
+	font-size: 2.6rem;
+}
+.main-title h2 {
+	font-size: 1.4rem;
+}
+.main-title a {
+	color: #646464;
+	text-decoration:none;
+}
+
 /* Main Navigation */
 #main-nav { padding: 3rem 0;}
 #main-nav .menu { padding-top: 1rem; }
@@ -171,7 +201,7 @@ img {
 	text-align: left; 
 	margin-top: 0; 
 	padding: 0; 
-	color: #fff; 
+	color: #000; 
 	z-index: 9999; 
 	height: 100%; 
 }
@@ -357,7 +387,7 @@ img {
 #postsListing .recentPost .postDetails .postLabels { 
 	float: left; 
 	padding-left: 2.1rem; 
-	background: url("images/label_icon.png") no-repeat top left; 
+	background: url("images/folder_icon.png") no-repeat top left; 
 	font-size: 1.3rem; 
 	color: #c3c3c3; 
 	margin-top: 9px; 
@@ -366,7 +396,6 @@ img {
 }
 #postsListing .recentPost .postDetails .postLabels a { 
 	color: #c3c3c3; 
-	margin-right: 5px;
 }
 #postsListing .recentPost .postDetails .postLabels a:hover { color: #9b9b9b; }
 #postsListing .recentPost .postDetails .postLink { 
@@ -742,11 +771,11 @@ footer .copyright { font-size: 1.2rem;}
 /* Article, Elements and Typography Styles */
 
 /* Links Styles */
-.singlePost a { 
+.singlePost a , .commentDetails a{ 
 	color: #50c1e9; 
 	text-decoration: none; 
 }
-.singlePost a:hover { text-decoration: underline; }
+.singlePost a:hover, .commentDetails a:hover { text-decoration: underline; }
 
 /* Excrept Styles */
 .singlePost .articleExcrept { 
@@ -758,6 +787,60 @@ footer .copyright { font-size: 1.2rem;}
 	line-height: 2.1rem; 
 	color: #555; 
 }
+.postDetailsSingle { 
+	width: 100%; 
+	height: auto;
+	overflow: hidden;
+	padding-bottom: 1rem;
+	background: #fafafa; 
+	margin-top: 1rem;
+}
+.postDetailsSingle .postLabels { 
+	float: left;
+	padding-left: 2.1rem;
+	background: url("images/folder_icon.png") no-repeat top left;
+	font-size: 1.3rem;
+	color: #c3c3c3;
+	margin-top: 9px;
+	margin-left: 1rem;
+	width: 100%;
+	margin-bottom: 5px;
+}
+.postDetailsSingle .postLabels a { 
+	color: #c3c3c3;
+	text-decoration: none;
+}
+.postDetailsSingle .postLabels a:hover { color: #9b9b9b; }
+.postDetailsSingle .postLink { 
+	float: right; 
+	text-transform: uppercase; 
+	font-size: 1.4rem; 
+	font-weight: bold; 
+	margin: 1rem 1rem 0 0;
+}
+.postDetailsSingle .postLink a { color: #9b9b9b; }
+
+
+.postDetailsSingle .postTags { 
+	float: left; 
+	padding-left: 2.1rem; 
+	background: url("images/label_icon.png") no-repeat top left; 
+	font-size: 1.3rem; 
+	color: #c3c3c3; 
+	margin-top: 9px; 
+	margin-left: 1rem;
+	width: 100%;
+}
+.postDetailsSingle .postTags a { 
+	color: #c3c3c3;
+	text-decoration: none;
+}
+.postDetailsSingle .postTags a:hover { color: #9b9b9b; }
+.cont-up{
+	height: 3px; 
+	margin-top: 3rem;
+}
+
 
 /* Image Styles */
 .singlePost img { 
@@ -768,59 +851,78 @@ footer .copyright { font-size: 1.2rem;}
 }
 
 /* Headings Styles */
-.singlePost h1, 
-.singlePost h2,
-.singlePost h3,
-.singlePost h4,
-.singlePost h5,
-.singlePost h6 { 
+.singlePost h1, .commentDetails h1,
+.singlePost h2, .commentDetails h2,
+.singlePost h3, .commentDetails h3,
+.singlePost h4, .commentDetails h4,
+.singlePost h5, .commentDetails h5,
+.singlePost h6, .commentDetails h6{ 
 	font-weight: 600; 
 	margin: 1rem 0; 
 	padding:0;  
 	color: #5d5d5d;
 }
-.singlePost h1 { font-size: 2.3rem; }
-.singlePost h2 { font-size: 2rem; }
-.singlePost h3 { font-size: 1.8rem; }
-.singlePost h4 { font-size: 1.6rem; }
-.singlePost h5 { font-size: 1.4rem; }
-.singlePost h6 { font-size: 1.2rem; }
+.singlePost h1, .commentDetails h1 { font-size: 2.3rem; }
+.singlePost h2, .commentDetails h2 { font-size: 2rem; }
+.singlePost h3, .commentDetails h3 { font-size: 1.8rem; }
+.singlePost h4, .commentDetails h4 { font-size: 1.6rem; }
+.singlePost h5, .commentDetails h5 { font-size: 1.4rem; }
+.singlePost h6, .commentDetails h6 { font-size: 1.2rem; }
 
-.singlePost blockquote {
+.singlePost blockquote, .commentDetails blockquote {
 	padding: 10px;
 	font-style: italic;
 }
-.singlePost cite {
+.singlePost cite, .commentDetails cite {
 	font-size: 1.2rem;
 	color: #999;
 }
-.singlePost cite:before {
+.singlePost cite:before, .commentDetails cite:before {
 	content: "\A";
     white-space: pre;
 }
-.singlePost ul, 
-.singlePost li, 
-.singlePost ol,
-.singlePost dl,
-.singlePost dd { 
+.singlePost ul, .commentDetails ul, 
+.singlePost li, .commentDetails li,
+.singlePost ol, .commentDetails ol,
+.commentDetails dl,
+.commentDetails dd { 
 	margin: 1.4rem 1.5rem;
 	list-style: inherit;
 }
+.singlePost ul {
+	list-style: disc;
+}
+.singlePost ol{
+	list-style: decimal;
+}
+.singlePost ol ol {
+	list-style: upper-alpha;
+}
+.singlePost ol ol ol {
+	list-style: lower-roman;
+}
+ .singlePostol ol ol ol {
+	list-style: lower-alpha;
+}
+strong{
+	font-weight: bold;
+}
+
 /* Table Styles */
-.singlePost table { 
+.singlePost table, .commentDetails table { 
 	width: 100%; 
 	border-collapse: collapse; 
 	margin: 3rem 0px;
 }
-.singlePost tr:nth-of-type(odd) { background: #fcfcfc; }
-.singlePost th { 
+.singlePost tr:nth-of-type(odd), .commentDetails tr:nth-of-type { background: #fcfcfc; }
+.singlePost th, .commentDetails th { 
 	background: #e8e8e8; 
 	color: #5d5d5d; 
 	font-weight: bold; 
 	text-align: center; 
 }
-.singlePost td,
-.singlePost th { 
+.singlePost td, .commentDetails td,
+.singlePost th, .commentDetails th { 
 	padding: 0.6rem; 
 	border: 1px solid #ccc; 
 	text-align: center; 
@@ -835,10 +937,15 @@ footer .copyright { font-size: 1.2rem;}
 	float: left; 
 	margin-top: 1rem;
 }
-p { 
+p{ 
 	text-align: justify; 
 	line-height: 2.3rem; 
 	margin: 1.5rem 0; 
+	font-size: 1.4rem; 
+}
+span{ 
+	text-align: justify; 
+	line-height: 2.3rem; 
 	font-size: 1.4rem; 
 }
 
@@ -1315,19 +1422,42 @@ a.readmore i { display: none; }
 .site-content .gallery dd {
 	margin: 0;
 }
+.singlePost dt{
+	font-weight: bold;
+	line-height: 1.714285714;
+}
+.singlePost dl{
+	margin: 0 24px;
+	margin: 0 1.714285714rem;
+}
+.singlePost dd{
+	line-height: 1.714285714;
+	margin-bottom: 24px;
+	margin-bottom: 1.714285714rem;
+}
+.singlePost address{
+	display: block;
+	line-height: 1.714285714;
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+}
+
 
 /* Alignment */
-.alignleft {
+.alignleft,
+img.alignleft {
 	display: inline;
 	float: left;
 	margin-right: 1.5rem;
 }
-.alignright {
+.alignright,
+img.alignright  {
 	display: inline;
 	float: right;
 	margin-left: 1.5rem;
 }
-.aligncenter {
+.aligncenter,
+img.aligncenter {
 	clear: both;
 	display: block;
 	margin: 0 auto;
@@ -1337,7 +1467,6 @@ pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 1.2rem;
-	font-size: 1rem;
 	line-height: 1.6rem;
 	margin-bottom: 1.6rem;
 	padding: 1.6em;
