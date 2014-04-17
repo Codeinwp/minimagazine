@@ -1,16 +1,16 @@
-= CWP Blog =
+= MiniMagazine =
 
-Author: Codeinwp
-Tags: blue, gray, light, white, two-columns, right-sidebar, flexible-width, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready
+Author: codeinwp
+Tags: blue, gray, light, white, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, custom-header, custom-menu
 Requires at least:	3.3.0
 Tested up to:		3.8
 
-CWP Blog
+MiniMagazine
 == Description ==
-CWP Blog is a easily customizable WordPress Theme with an elegant design. 
+MiniMagazine is free responsive Magazine WordPress theme, perfect for a personal blog.
  
 = License =
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public Licemse.
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License v2.
 The exceptions to this license are as follows: 
 * Open Sans font is licensed under Apache License, Version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 * jquery cycle - Dual licensed under the MIT and GPL licenses.	
