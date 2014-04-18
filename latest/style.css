@@ -1,12 +1,12 @@
 /*
 	Theme Name: MiniMagazine
-	Theme URI: http://themes.codeinwp.com/themes/minimag-pro/
-	Description: MiniMagazine Blog is free responsive Magazine WordPress theme, perfect for a personal blog.
-	Author: Codeinwp
-	Author URI: http://themes.codeinwp.com
+	Theme URI: themeisle.com
+	Description: MiniMagazine is free responsive Magazine WordPress theme, perfect for a personal blog.
+	Author: codeinwp
+	Author URI: Codeinwp.com
 	Version: 1.0.6
 	Tags: blue, gray, light, white, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, custom-header, custom-menu
-	License: GNU General Public License
+	License: GNU General Public License v2
 	License URI: license.txt
 	
 	MiniMagazine is based on the _s (Underscores) starter theme by Automattic Inc., licensed under GNU General Public License.
@@ -767,7 +767,7 @@ footer .copyright {
 }
 footer .footerMetaData .footerMenu ul li a:hover { text-decoration: underline; }
 footer .copyright { font-size: 1.2rem;}
-
+footer .copyright a {color:#fff !important;}
 /* Article, Elements and Typography Styles */
 
 /* Links Styles */
