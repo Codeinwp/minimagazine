@@ -2,21 +2,26 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package cwp
+ * @package minimagazine
  */
- global $optionsdb;
+
+ $codeinwp_fb = get_theme_mod('codeinwp_fb');
+ $codeinwp_tw = get_theme_mod('codeinwp_tw');
+ $codeinwp_rss = get_theme_mod('codeinwp_rss');
+ 
  if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<aside id="sidebar" class="five columns">
 		<div class="socialIcons">
 				<?php 	
-						if(isset($optionsdb['facebook']) && $optionsdb['facebook'] != '')		
-							echo "<a title='Like us!' href='".$optionsdb['facebook']."' class='soc-icon soc-icon-facebook'><i class='icon-facebook'></i></a>";	
-							
-						if(isset($optionsdb['twitter']) && $optionsdb['twitter'] != '')		
-							echo "<a title='Follow us!' href='".$optionsdb['twitter']."' class='soc-icon soc-icon-twitter'><i class='icon-twitter'></i></a>";	
 						
-						if(isset($optionsdb['rss']) && $optionsdb['rss'] != '')		
-							echo "<a title='Subscribe!' href='".$optionsdb['rss']."' class='soc-icon soc-icon-rss'><i class='icon-rss'></i></a>";	
+						if(!empty($codeinwp_fb))		
+							echo "<a title='Like us!' href='".$codeinwp_fb."' class='soc-icon soc-icon-facebook'><i class='icon-facebook'></i></a>";	
+							
+						if(!empty($codeinwp_tw))		
+							echo "<a title='Follow us!' href='".$codeinwp_tw."' class='soc-icon soc-icon-twitter'><i class='icon-twitter'></i></a>";	
+						
+						if(!empty($codeinwp_rss))		
+							echo "<a title='Subscribe!' href='".$codeinwp_rss."' class='soc-icon soc-icon-rss'><i class='icon-rss'></i></a>";	
 				?>	
 		</div><!-- end .socialIcons -->
 
@@ -32,20 +37,21 @@
 
 			<div class="socialIcons">
 				<?php 	
-						if(isset($optionsdb['facebook']) && $optionsdb['facebook'] != '')		
-							echo "<a title='Like us!' href='".$optionsdb['facebook']."' class='soc-icon soc-icon-facebook'><i class='icon-facebook'></i></a>";	
+						if(!empty($codeinwp_fb))		
+							echo "<a title='Like us!' href='".$codeinwp_fb."' class='soc-icon soc-icon-facebook'><i class='icon-facebook'></i></a>";	
 							
-						if(isset($optionsdb['twitter']) && $optionsdb['twitter'] != '')		
-							echo "<a title='Follow us!' href='".$optionsdb['twitter']."' class='soc-icon soc-icon-twitter'><i class='icon-twitter'></i></a>";	
+						if(!empty($codeinwp_tw))		
+							echo "<a title='Follow us!' href='".$codeinwp_tw."' class='soc-icon soc-icon-twitter'><i class='icon-twitter'></i></a>";	
 						
-						if(isset($optionsdb['rss']) && $optionsdb['rss'] != '')		
-							echo "<a title='Subscribe!' href='".$optionsdb['rss']."' class='soc-icon soc-icon-rss'><i class='icon-rss'></i></a>";	
+						if(!empty($codeinwp_rss))		
+							echo "<a title='Subscribe!' href='".$codeinwp_rss."' class='soc-icon soc-icon-rss'><i class='icon-rss'></i></a>";	
+
 				?>	
 			</div><!-- end .socialIcons -->
 
 			<div class="recentPosts">
 				<header>
-					<h3><?php _e('Recent Posts','cwp'); ?></h3>
+					<h3><?php _e('Recent Posts','minimagazine'); ?></h3>
 				</header>
 				<ul>
 				<?php 
@@ -68,7 +74,7 @@
 
 			<div class="latestComments">
 				<header>
-					<h3><?php _e('Latest Comments','cwp'); ?></h3>
+					<h3><?php _e('Latest Comments','minimagazine'); ?></h3>
 				</header>
 				<ul>
 				<?php

@@ -2,7 +2,7 @@
 
 /**
  * The template for displaying Comments.
- * @package cwp
+ * @package minimagazine
  */
 
 
@@ -62,7 +62,7 @@ if ( post_password_required() )
 
 	?>
 
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'cwp' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'minimagazine' ); ?></p>
 
 	<?php
 		else:
@@ -78,7 +78,7 @@ if ( post_password_required() )
 
 				'comment_notes_after' => '',
 				
-				'title_reply' => '<header><h2>'.__('Leave a Reply','cwp').'</h2></header>',
+				'title_reply' => '<header><h2>'.__('Leave a Reply','minimagazine').'</h2></header>',
 
 				// redefine your own textarea (the comment body)
 
@@ -86,12 +86,12 @@ if ( post_password_required() )
 
 				'fields' => array(
 				
-				'author' => '<div class="inputBlock">' . '<label for="author">' . __( 'Name*', 'cwp' ) . '</label><input  id="author" name="author" type="text" placeholder="Your Name" /> ' . '</div> ',
+				'author' => '<div class="inputBlock">' . '<label for="author">' . __( 'Name*', 'minimagazine' ) . '</label><input  id="author" name="author" type="text" placeholder="Your Name" /> ' . '</div> ',
 								
-				'email' => '<div class="inputBlock">'.'<label for="email">' . __( 'Email*', 'cwp' ) . '</label><input id="email" name="email" type="text" placeholder="Your Email" />' . '</div> ',
+				'email' => '<div class="inputBlock">'.'<label for="email">' . __( 'Email*', 'minimagazine' ) . '</label><input id="email" name="email" type="text" placeholder="Your Email" />' . '</div> ',
 				
 			
-				'url' => '<div class="inputBlock">'.'<label for="url"><span>' . __( 'Website', 'cwp' ) . '</label><input id="url" name="url" type="text" placeholder="Your Website" />'. '</div>',
+				'url' => '<div class="inputBlock">'.'<label for="url"><span>' . __( 'Website', 'minimagazine' ) . '</label><input id="url" name="url" type="text" placeholder="Your Website" />'. '</div>',
 
 			),
 

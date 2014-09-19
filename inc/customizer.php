@@ -10,7 +10,20 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+ 
+
 function cwp_customize_register( $wp_customize ) {
+
+	class minimagazine_Theme_Support extends WP_Customize_Control
+	{
+		public function render_content()
+		{
+
+		}
+
+	} 
+
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -22,14 +35,15 @@ function cwp_customize_register( $wp_customize ) {
 		'priority'   => 30,
 	));
 	$wp_customize->add_setting(
-        'cwp_theme_notice'
+        'codeinwp_theme_notes'
 	);
-	$wp_customize->add_control(
-    'cwp_theme_notice',
-    array(
-        'section' => 'codeinwp_theme_notes',
-		'type'  => 'read-only',
-    ));
+
+	$wp_customize->add_control( new minimagazine_Theme_Support( $wp_customize, 'codeinwp_theme_notes',
+	    array(
+	        'section' => 'codeinwp_theme_notes',
+	   )
+	));
+
 	
 	
 	/* Logo */
@@ -273,11 +287,11 @@ function cwp_customize_register( $wp_customize ) {
     	'priority'    => 35
 	) );
 
-	$wp_customize->add_setting( 'header_image' );
+	$wp_customize->add_setting( 'minimagazine_header_image' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_headerimage', array(
 	    'label'    => __( 'Image for the header of pages', 'cwp' ),
 	    'section'  => 'codeinwp_headerimage_section',
-	    'settings' => 'header_image',
+	    'settings' => 'minimagazine_header_image',
 		'priority'    => 1
 	) ) );
 }
