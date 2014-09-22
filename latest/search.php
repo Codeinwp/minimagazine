@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package cwp
+ * @package minimagazine
  */
 
 get_header(); ?>
@@ -11,7 +11,7 @@ get_header(); ?>
 		<section id="mainContent" class="eleven columns">
 			<section id="postsListing">
 				<header>
-					<h3><?php printf( __( 'Search Results for: %s', 'cwp' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
+					<h3><?php printf( __( 'Search Results for: %s', 'minimagazine' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
 				</header>
 
 				<ul class="recentPosts">
@@ -25,8 +25,8 @@ get_header(); ?>
 			</section><!-- end #postsListing -->
 
 		<section id="postsNav">
-			<?php previous_posts_link('<i class="icon-long-arrow-left"></i>'.__( 'NEWER POSTS', 'cwp' )); ?>
-			<?php next_posts_link( __( 'OLDER POSTS', 'cwp' ).'<i class="icon-long-arrow-right"></i>'); ?>
+			<?php previous_posts_link('<i class="icon-long-arrow-left"></i>'.__( 'NEWER POSTS', 'minimagazine' )); ?>
+			<?php next_posts_link( __( 'OLDER POSTS', 'minimagazine' ).'<i class="icon-long-arrow-right"></i>'); ?>
 		</section><!-- end postsNav -->
 
 		</section><!-- end #mainContent -->

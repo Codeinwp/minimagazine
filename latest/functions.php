@@ -1,8 +1,8 @@
 <?php
 /**
- * cwp functions and definitions
+ * minimagazine functions and definitions
  *
- * @package cwp
+ * @package minimagazine
  */
 
 /**
@@ -20,15 +20,15 @@ if ( ! isset( $content_width ) )
  * support post thumbnails.
  */
 
-function cwp_setup() {
+function minimagazine_setup() {
 
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on cwp, use a find and replace
-	 * to change 'cwp' to the name of your theme in all the template files
+	 * If you're building a theme based on minimagazine, use a find and replace
+	 * to change 'minimagazine' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'cwp', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'minimagazine', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -46,8 +46,8 @@ function cwp_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'cwp' ),
-		'footer_menu' => __( 'Footer Menu', 'cwp' )
+		'primary' => __( 'Primary Menu', 'minimagazine' ),
+		'footer_menu' => __( 'Footer Menu', 'minimagazine' )
 	) );
 
 	/**
@@ -73,14 +73,14 @@ function cwp_setup() {
 
 }
 
-add_action( 'after_setup_theme', 'cwp_setup' );
+add_action( 'after_setup_theme', 'minimagazine_setup' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
  */
-function cwp_widgets_init() {
+function minimagazine_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'cwp' ),
+		'name'          => __( 'Sidebar', 'minimagazine' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -88,53 +88,53 @@ function cwp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 }
-add_action( 'widgets_init', 'cwp_widgets_init' );
+add_action( 'widgets_init', 'minimagazine_widgets_init' );
 
 /**
  * Set excerpt length
  */
-function cwp_custom_excerpt_length( $length ) {
+function minimagazine_custom_excerpt_length( $length ) {
 	return 20;
 }
-add_filter( 'excerpt_length', 'cwp_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'minimagazine_custom_excerpt_length', 999 );
 
 /**
  * Enqueue scripts and styles
  */
-function cwp_scripts() {
+function minimagazine_scripts() {
 
 	
-	wp_register_style( 'cwp_base', get_template_directory_uri() . '/css/base.css');
+	wp_register_style( 'minimagazine_base', get_template_directory_uri() . '/css/base.css');
 
-    wp_enqueue_style( 'cwp_base' );
+    wp_enqueue_style( 'minimagazine_base' );
 	
-	wp_register_style( 'cwp_font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
+	wp_register_style( 'minimagazine_font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
 
-    wp_enqueue_style( 'cwp_font-awesome' );
+    wp_enqueue_style( 'minimagazine_font-awesome' );
 
-	wp_enqueue_style( 'cwp-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'minimagazine-style', get_stylesheet_uri() );
 	
 	wp_enqueue_script('jquery');
 
 	
-	wp_enqueue_script( 'cwp_cycle', get_template_directory_uri() . '/js/jquery.cycle.all.js', array("jquery"), '20120206', true );
-	wp_enqueue_script( 'cwp_customscript', get_template_directory_uri() . '/js/customscript.js', array("jquery"), '20120206', true );
-	wp_enqueue_script( 'cwp_tiptip', get_template_directory_uri() . '/js/jquery.tipTip.minified.js', array("jquery"), '20120206', true );
-	wp_enqueue_script( 'cwp_main', get_template_directory_uri() . '/js/main.js', array("jquery"), '20120206', true );
+	wp_enqueue_script( 'minimagazine_cycle', get_template_directory_uri() . '/js/jquery.cycle.all.js', array("jquery"), '20120206', true );
+	wp_enqueue_script( 'minimagazine_customscript', get_template_directory_uri() . '/js/customscript.js', array("jquery"), '20120206', true );
+	wp_enqueue_script( 'minimagazine_tiptip', get_template_directory_uri() . '/js/jquery.tipTip.minified.js', array("jquery"), '20120206', true );
+	wp_enqueue_script( 'minimagazine_main', get_template_directory_uri() . '/js/main.js', array("jquery"), '20120206', true );
 	
-	wp_enqueue_script( 'cwp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'minimagazine-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'cwp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'minimagazine-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'cwp-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'minimagazine-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'cwp_scripts' );
+add_action( 'wp_enqueue_scripts', 'minimagazine_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -167,15 +167,15 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-function cwp_add_editor_styles() {
+function minimagazine_add_editor_styles() {
     add_editor_style( '/css/custom-editor-style.css' );
 }
-add_action( 'init', 'cwp_add_editor_styles' );
+add_action( 'init', 'minimagazine_add_editor_styles' );
 
 
-add_filter( 'the_title', 'cwp_default_title' );
+add_filter( 'the_title', 'minimagazine_default_title' );
 
-function cwp_default_title( $title ) {
+function minimagazine_default_title( $title ) {
 
 	if($title == '')
 		$title = "Default title";
@@ -183,7 +183,7 @@ function cwp_default_title( $title ) {
 	return $title;
 }
 
-function cwp_related_posts() {
+function minimagazine_related_posts() {
 
 	$posttags = get_the_tags();	
 	
@@ -213,7 +213,7 @@ function cwp_related_posts() {
 	}
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
-	echo '<section id="relatedArticles" class="clearfix"><header><h2>'.__('Related Articles','cwp').'</h2></header>';
+	echo '<section id="relatedArticles" class="clearfix"><header><h2>'.__('Related Articles','minimagazine').'</h2></header>';
 	
 	while ( $the_query->have_posts() ) : $the_query->the_post();
 			?> 
@@ -247,13 +247,13 @@ function cwp_related_posts() {
 
 }
 
-add_filter('next_posts_link_attributes', 'cwp_next_posts_link_attributes');
-add_filter('previous_posts_link_attributes', 'cwp_prev_posts_link_attributes');
+add_filter('next_posts_link_attributes', 'minimagazine_next_posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'minimagazine_prev_posts_link_attributes');
 
-function cwp_next_posts_link_attributes(){
+function minimagazine_next_posts_link_attributes(){
    return 'class="next"';
 }
 
-function cwp_prev_posts_link_attributes(){
+function minimagazine_prev_posts_link_attributes(){
    return 'class="prev"';
 }

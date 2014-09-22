@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package cwp
+ * @package minimagazine
  */
 
 get_header(); ?>
@@ -11,11 +11,11 @@ get_header(); ?>
 		<section id="mainContent" class="eleven columns">
 			<section id="postsListing">
 				<header>
-					<h3><?php _e( 'Oops! That page can&rsquo;t be found.', 'cwp' ); ?></h3>
+					<h3><?php _e( 'Oops! That page can&rsquo;t be found.', 'minimagazine' ); ?></h3>
 				</header>
 
 				<ul class="recentPosts">
-					<li class="recentPost"><div class="postContent"><h2><?php _e( 'It looks like nothing was found at this location.', 'cwp' ); ?></h2></div></li>
+					<li class="recentPost"><div class="postContent"><h2><?php _e( 'It looks like nothing was found at this location.', 'minimagazine' ); ?></h2></div></li>
 
 				</ul><!-- .recentPosts -->
 			</section><!-- end #postsListing -->

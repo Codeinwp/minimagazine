@@ -2,19 +2,19 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package cwp
+ * @package minimagazine
  */
 
-get_header(); 
-global $optionsdb;
+get_header();
 
 ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 	<?php 
-		if(isset($optionsdb['header_image']) && $optionsdb['header_image'] != '')
-			echo '<section id="headerOuter" style="background:url('.$optionsdb['header_image'].');">';
-		else
+		if(get_theme_mod('minimagazine_header_image')):
+			echo '<section id="headerOuter" style="background:url('.get_theme_mod('minimagazine_header_image').');">';
+		else:
 			echo '<section id="headerOuter" class="tmp">';
+		endif;
 	?>
 		<header>
 			<div class="headerOuterContent container">
@@ -23,7 +23,7 @@ global $optionsdb;
 						<h1><?php the_title(); ?></h1>
 						<div class="postMeta">
 							<div class="author"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>"><i class="icon-user"></i><?php echo ' '.get_the_author(); ?></a></div>
-							<div class="noReactions"><a href="#"><i class="icon-comment"></i><?php comments_number( __('No reactions','cwp'), __('One Reaction','cwp'), '%'.__('Reactions','cwp') ); ?></a></div>
+							<div class="noReactions"><a href="<?php comments_link(); ?>"><i class="icon-comment"></i><?php comments_number( __('No reactions','minimagazine'), __('One Reaction','minimagazine'), '%'.__('Reactions','minimagazine') ); ?></a></div>
 						</div><!-- end .postMeta -->
 					</div><!-- end .postDetails -->
 					<div class="clearfix"></div>
@@ -56,7 +56,7 @@ global $optionsdb;
 			</div><!-- end .postDetails -->
 
 			<section id="postAuthor">
-				<header><h2><?php _e('About the Author','cwp'); ?></h2></header>
+				<header><h2><?php _e('About the Author','minimagazine'); ?></h2></header>
 				<div class="authorInfo">
 					<div class="avatar">
 						<?php echo get_avatar(get_the_author_meta('ID'),120); ?>
@@ -72,7 +72,7 @@ global $optionsdb;
 			<?php cwp_related_posts(); ?>
 
 			<section id="commentsSection">
-				<header><h2><?php comments_number( __('No comments','cwp'), __('One comment','cp'), '%'.__('Comments','cwp') ); ?></h2></header>
+				<header><h2><?php comments_number( __('No comments','minimagazine'), __('One comment','cp'), '%'.__('Comments','minimagazine') ); ?></h2></header>
 				<?php comments_template(); ?>
 				
 

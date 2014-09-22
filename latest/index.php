@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package cwp
+ * @package minimagazine
  */
 
 get_header();
@@ -98,7 +98,7 @@ if(get_theme_mod('slide1_image') || get_theme_mod('slide2_image') || get_theme_m
 		<section id="mainContent" class="eleven columns">
 			<section id="postsListing">
 				<header>
-					<h3><?php _e('Posts Listings','cwp'); ?></h3>
+					<h3><?php _e('Posts Listings','minimagazine'); ?></h3>
 				</header>
 
 				<ul class="recentPosts">
@@ -112,8 +112,8 @@ if(get_theme_mod('slide1_image') || get_theme_mod('slide2_image') || get_theme_m
 			</section><!-- end #postsListing -->
 
 		<section id="postsNav">
-			<?php previous_posts_link('<i class="icon-long-arrow-left"></i>'.__( 'NEWER POSTS', 'cwp' )); ?>
-			<?php next_posts_link( __( 'OLDER POSTS', 'cwp' ).'<i class="icon-long-arrow-right"></i>'); ?>
+			<?php previous_posts_link('<i class="icon-long-arrow-left"></i>'.__( 'NEWER POSTS', 'minimagazine' )); ?>
+			<?php next_posts_link( __( 'OLDER POSTS', 'minimagazine' ).'<i class="icon-long-arrow-right"></i>'); ?>
 		</section><!-- end postsNav -->
 
 		</section><!-- end #mainContent -->
