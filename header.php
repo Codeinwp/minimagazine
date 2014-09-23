@@ -20,28 +20,28 @@
 
 <body <?php body_class(); ?>>
 	<div class="container">
-		<?php if(get_header_image()): ?>
-			<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-		<?php endif; ?>
 		<div id="main-nav">
 			<div class="brand five columns">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				
 				<?php
 				if(get_theme_mod('codeinwp_logo')):
+					echo '<a href="'.esc_url( home_url( '/' ) ).'">';
 					if(get_theme_mod('codeinwp_logo_text')):
 						echo '<img src="'.get_theme_mod('codeinwp_logo').'" alt="'.get_theme_mod('codeinwp_logo_text').'">';
 					else:
 						echo '<img src="'.get_theme_mod('codeinwp_logo').'" alt="'.get_bloginfo('name').'">';
 					endif;
+					echo '</a>';
 				else:
 					echo '<div class="main-title">';
-						echo '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
-						echo '<h2 class="site-description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
+						
+						echo '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+						echo '<h2 class="site-description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'description', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
 					echo '</div>';
 				endif;
                 	
 				?>
-				</a>
+				
 			</div>
 
 			<nav class="menu eleven columns main-navigation">

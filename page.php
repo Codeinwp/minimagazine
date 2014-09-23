@@ -48,22 +48,6 @@ get_header();
 				
 			</article><!-- end .singlePost -->
 
-			<section id="postAuthor">
-				<header><h2><?php _e('About the Author','minimagazine'); ?></h2></header>
-				<div class="authorInfo">
-					<div class="avatar">
-						<?php echo get_avatar(get_the_author_meta('ID'),120); ?>
-					</div><!-- end .avatar -->
-					<div class="details">
-						<h2 class="name"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>"><?php echo get_the_author(); ?></a></h2>
-						<p class="description"><?php the_author_meta('description'); ?></p>
-						<h3 class="address"><?php echo the_author_meta('user_url'); ?></h3><!-- end .address -->
-					</div><!-- end .details -->
-				</div>
-			</section><!-- end .postAuthor -->
-			
-			<?php minimagazine_related_posts(); ?>
-
 			<section id="commentsSection">
 				<header><h2><?php comments_number( __('No comments','minimagazine'), __('One comment','minimagazine'), '%'.__(' Comments','minimagazine') ); ?></h2></header>
 				<?php comments_template(); ?>

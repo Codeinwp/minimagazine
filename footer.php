@@ -63,7 +63,7 @@
 					endif;
 				?>			
 				<div class="copyright">
-				<a href="http://themeisle.com/themes/minimagazine/?utm_source=minimagazine&utm_medium=link&utm_campaign=themefooter" target="_blank">Minimagazine</a><?php _e(' powered by ','minimagazine'); ?><a href="http://wordpress.org/" target="_blank"><?php _e('WordPress','minimagazine'); ?></a>
+				<a href="http://themeisle.com/themes/minimagazine/" target="_blank">Minimagazine</a><?php _e(' powered by ','minimagazine'); ?><a href="http://wordpress.org/" target="_blank"><?php _e('WordPress','minimagazine'); ?></a>
 				</div>	
 			</div><!-- end .footerMetaData -->
 

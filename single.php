@@ -69,7 +69,7 @@ get_header();
 				</div>
 			</section><!-- end .postAuthor -->
 			
-			<?php cwp_related_posts(); ?>
+			<?php minimagazine_related_posts(); ?>
 
 			<section id="commentsSection">
 				<header><h2><?php comments_number( __('No comments','minimagazine'), __('One comment','cp'), '%'.__('Comments','minimagazine') ); ?></h2></header>
