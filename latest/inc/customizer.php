@@ -23,7 +23,7 @@ function cwp_customize_register( $wp_customize ) {
 
 	} 
 
-
+	$wp_customize->remove_section('header_image');
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -283,13 +283,13 @@ function cwp_customize_register( $wp_customize ) {
 	
 	/* Image for header of pages */
 	$wp_customize->add_section( 'codeinwp_headerimage_section' , array(
-    	'title'       => __( 'Image for the header of pages', 'cwp' ),
+    	'title'       => __( 'Header image', 'cwp' ),
     	'priority'    => 35
 	) );
 
 	$wp_customize->add_setting( 'minimagazine_header_image' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_headerimage', array(
-	    'label'    => __( 'Image for the header of pages', 'cwp' ),
+	    'label'    => __( 'Recommended image size is 1900 x 150 px', 'cwp' ),
 	    'section'  => 'codeinwp_headerimage_section',
 	    'settings' => 'minimagazine_header_image',
 		'priority'    => 1
