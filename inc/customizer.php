@@ -36,7 +36,7 @@ function cwp_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_setting(
         'codeinwp_theme_notes'
-	);
+	,array('sanitize_callback' => 'cwp_sanitize_text') );
 
 	$wp_customize->add_control( new minimagazine_Theme_Support( $wp_customize, 'codeinwp_theme_notes',
 	    array(
@@ -53,7 +53,7 @@ function cwp_customize_register( $wp_customize ) {
     	'description' => __('Logo details','cwp'),
 	) );
 
-	$wp_customize->add_setting( 'codeinwp_logo' );
+	$wp_customize->add_setting( 'codeinwp_logo',array('sanitize_callback' => 'cwp_sanitize_text') );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
 	    'label'    => __( 'Upload your logo file', 'cwp' ),
 	    'section'  => 'codeinwp_logo_section',
@@ -77,7 +77,7 @@ function cwp_customize_register( $wp_customize ) {
     	'description' => __('Upload your footer logo file','cwp'),
 	) );
 
-	$wp_customize->add_setting( 'codeinwp_footerlogo' );
+	$wp_customize->add_setting( 'codeinwp_footerlogo' ,array('sanitize_callback' => 'cwp_sanitize_text') );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_footerlogo', array(
 	    'label'    => __( 'Footer logo', 'cwp' ),
 	    'section'  => 'codeinwp_footerlogo_section',
@@ -159,7 +159,7 @@ function cwp_customize_register( $wp_customize ) {
 	) );
 	
 	/* Slide #1 */
-	$wp_customize->add_setting( 'slide1_image' );
+	$wp_customize->add_setting( 'slide1_image' ,array('sanitize_callback' => 'cwp_sanitize_text') );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slide1', array(
 	    'label'    => __( 'First slide image', 'cwp' ),
 	    'section'  => 'codeinwp_slider_section',
@@ -200,7 +200,7 @@ function cwp_customize_register( $wp_customize ) {
 	) );
 	
 	/* Slide #2 */
-	$wp_customize->add_setting( 'slide2_image' );
+	$wp_customize->add_setting( 'slide2_image' ,array('sanitize_callback' => 'cwp_sanitize_text') );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slide2', array(
 	    'label'    => __( 'Second slide image', 'cwp' ),
 	    'section'  => 'codeinwp_slider_section',
@@ -241,7 +241,7 @@ function cwp_customize_register( $wp_customize ) {
 	) );
 	
 	/* Slide #3 */
-	$wp_customize->add_setting( 'slide3_image' );
+	$wp_customize->add_setting( 'slide3_image' ,array('sanitize_callback' => 'cwp_sanitize_text') );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_slide3', array(
 	    'label'    => __( 'Third slide image', 'cwp' ),
 	    'section'  => 'codeinwp_slider_section',
@@ -287,7 +287,7 @@ function cwp_customize_register( $wp_customize ) {
     	'priority'    => 35
 	) );
 
-	$wp_customize->add_setting( 'minimagazine_header_image' );
+	$wp_customize->add_setting( 'minimagazine_header_image',array('sanitize_callback' => 'cwp_sanitize_text') );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_headerimage', array(
 	    'label'    => __( 'Recommended image size is 1900 x 150 px', 'cwp' ),
 	    'section'  => 'codeinwp_headerimage_section',

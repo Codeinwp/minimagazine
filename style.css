@@ -1,10 +1,10 @@
 /*
 	Theme Name: MiniMagazine
-	Theme URI: http://themeisle.com/themes/minimagazine/
-	Description: MiniMagazine is free responsive Magazine WordPress theme, perfect for a personal blog.
-	Author: codeinwp
-	Author URI: Codeinwp.com
-	Version: 1.0.9
+	Theme URI: https://themeisle.com/themes/minimagazine/
+	Description: MiniMagazine is free responsive Magazine WordPress theme, perfect for a personal blog. Is has a slider, nice social icons and a flat design.<a href="https://themeisle.com/forums/forum/minimagazine/">Official support forum</a> (https://themeisle.com/forums/forum/minimagazine/)
+	Author: themeisle
+	Author URI: https://themeisle.com
+	Version: 1.1
 	Tags: blue, gray, light, white, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, custom-header, custom-menu
 	License: GNU General Public License v2
 	License URI: license.txt
@@ -14,7 +14,7 @@
 
 
 /* Imports */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Playfair+Display:400,900,700italic,900italic);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Playfair+Display:400,900,700italic,900italic);
 
 /* Site Styles
 ========================================= */
