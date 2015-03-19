@@ -1,5 +1,14 @@
 
 
+### 1.1.1 - 19/03/2015
+
+ Changes: 
+
+
+ * fixed sanitization
+ * Fixed #13, add login customizer plugin and tweet old post plugin
+
+
 ### 1.0.9 - 17/10/2014
 
  Changes: 
