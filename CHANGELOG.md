@@ -1,5 +1,14 @@
 
 
+### 1.1.2 - 16/07/2015
+
+ Changes: 
+
+
+ * Update class-tgm-plugin-activation to latest version
+ * Update style.css
+
+
 ### 1.1.1 - 19/03/2015
 
  Changes: 
