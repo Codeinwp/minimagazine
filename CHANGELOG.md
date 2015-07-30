@@ -1,5 +1,13 @@
 
 
+### 1.1.3 - 30/07/2015
+
+ Changes: 
+
+
+ * Updated translations files
+
+
 ### 1.1.2 - 16/07/2015
 
  Changes: 
