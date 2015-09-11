@@ -4,7 +4,7 @@
 	Description: MiniMagazine is free responsive Magazine WordPress theme, perfect for a personal blog. Is has a slider, nice social icons and a flat design.<a href="https://themeisle.com/forums/forum/minimagazine/">Official support forum</a> (https://themeisle.com/forums/forum/minimagazine/)
 	Author: themeisle
 	Author URI: https://themeisle.com
-	Version: 1.1.3
+	Version: 1.1.4
 	Tags: blue, gray, light, white, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-menu, editor-style, featured-images, theme-options, threaded-comments, translation-ready, custom-header, custom-menu
 	License: GNU General Public License v2
 	License URI: license.txt
@@ -1761,4 +1761,11 @@ section.comments .children {
 
 .wpcf7-form .clear{
   clear: both;
+}
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
 }
