@@ -1,5 +1,13 @@
 
 
+### 1.1.4 - 11/09/2015
+
+ Changes: 
+
+
+ * Removed tgm, updated version and theme check
+
+
 ### 1.1.3 - 30/07/2015
 
  Changes: 
