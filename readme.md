@@ -31,3 +31,4 @@ The exceptions to this license are as follows:
 	*  Email: dave@fontawesome.io
 	*  Twitter: http://twitter.com/davegandy
 	*  Work: Lead Product Designer @ Kyruus - http://kyruus.com
+* jQuery TipTip - dual licensed under the MIT and GPL licenses

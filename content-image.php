@@ -6,19 +6,23 @@
  */
 ?>
 				<li class="recentPost">
-						<div class="largeimg" style="background-image: url(
-							<?php
-								$feat_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+						<?php
+							$minimagazine_feat_image_image = '';
+							$feat_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 
-								if ( $feat_image[0] == NULL )  {
-									echo get_template_directory_uri() . "/images/default.jpg";
-								} else {
-									echo $feat_image[0];
-								}
-							?>
-						);">
+							if ( $feat_image[0] == NULL )  {
+								$minimagazine_feat_image_image = get_template_directory_uri() . "/images/default.jpg";
+							} else {
+								$minimagazine_feat_image_image = $feat_image[0];
+							}
 							
-						</div><!--/largeimg-->
+							if( !empty($minimagazine_feat_image_image) ) {
+								
+								echo "<div class='largeimg'><img src='".esc_url($minimagazine_feat_image_image)."' /></div>";
+								
+							}
+						
+						?>
 						
 						<div class="clearfix"></div>
 						<div class="postContent" style="float: none; margin-top: 10px;">

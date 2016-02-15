@@ -115,9 +115,6 @@ function minimagazine_scripts() {
 
 	wp_enqueue_style( 'minimagazine-style', get_stylesheet_uri() );
 	
-	wp_enqueue_script('jquery');
-
-	
 	wp_enqueue_script( 'minimagazine_cycle', get_template_directory_uri() . '/js/jquery.cycle.all.js', array("jquery"), '20120206', true );
 	wp_enqueue_script( 'minimagazine_customscript', get_template_directory_uri() . '/js/customscript.js', array("jquery"), '20120206', true );
 	wp_enqueue_script( 'minimagazine_tiptip', get_template_directory_uri() . '/js/jquery.tipTip.minified.js', array("jquery"), '20120206', true );
@@ -257,4 +254,23 @@ function minimagazine_next_posts_link_attributes(){
 
 function minimagazine_prev_posts_link_attributes(){
    return 'class="prev"';
+}
+
+add_action('wp_head', 'minimagazine_add_dynamic_css');
+
+function minimagazine_add_dynamic_css(){
+	
+	$output = '';
+	
+	if( is_single() ) {
+		
+		$minimagazine_header_image = get_theme_mod('minimagazine_header_image');
+		if( !empty($minimagazine_header_image) ) {
+		
+			$output .= "<style> #headerOuter { background:url(".esc_url($minimagazine_header_image)."); } </style>";
+		}	
+	}
+
+	echo $output;
+	
 }

@@ -27,9 +27,9 @@
 				if(get_theme_mod('codeinwp_logo')):
 					echo '<a href="'.esc_url( home_url( '/' ) ).'">';
 					if(get_theme_mod('codeinwp_logo_text')):
-						echo '<img src="'.get_theme_mod('codeinwp_logo').'" alt="'.get_theme_mod('codeinwp_logo_text').'">';
+						echo '<img src="'.esc_url(get_theme_mod('codeinwp_logo')).'" alt="'.esc_attr(get_theme_mod('codeinwp_logo_text')).'">';
 					else:
-						echo '<img src="'.get_theme_mod('codeinwp_logo').'" alt="'.get_bloginfo('name').'">';
+						echo '<img src="'.esc_url(get_theme_mod('codeinwp_logo')).'" alt="'.get_bloginfo('name').'">';
 					endif;
 					echo '</a>';
 				else:
