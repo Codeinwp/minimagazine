@@ -36,7 +36,7 @@ if(get_theme_mod('slide1_image') || get_theme_mod('slide2_image') || get_theme_m
 				</div><!-- end .slideContainer -->
 				<div class="overlay"></div>
 				<?php
-					echo '<img src="'.get_theme_mod('slide1_image').'" alt="'.get_bloginfo('name').'">';
+					echo '<img src="'.esc_url(get_theme_mod('slide1_image')).'" alt="'.get_bloginfo('name').'">';
 				?>	
 			</div><!-- end .slide -->
 			<?php endif; ?>
@@ -59,7 +59,7 @@ if(get_theme_mod('slide1_image') || get_theme_mod('slide2_image') || get_theme_m
 				</div><!-- end .slideContainer -->
 				<div class="overlay"></div>
 				<?php
-					echo '<img src="'.get_theme_mod('slide2_image').'" alt="'.get_bloginfo('name').'">';
+					echo '<img src="'.esc_url(get_theme_mod('slide2_image')).'" alt="'.get_bloginfo('name').'">';
 				?>
 			</div><!-- end .slide -->
 			<?php endif; ?>
@@ -82,7 +82,7 @@ if(get_theme_mod('slide1_image') || get_theme_mod('slide2_image') || get_theme_m
 				</div><!-- end .slideContainer -->
 				<div class="overlay"></div>
 				<?php
-					echo '<img src="'.get_theme_mod('slide3_image').'" alt="'.get_bloginfo('name').'">';
+					echo '<img src="'.esc_url(get_theme_mod('slide3_image')).'" alt="'.get_bloginfo('name').'">';
 				?>
 			</div><!-- end .slide -->
 			<?php endif; ?>

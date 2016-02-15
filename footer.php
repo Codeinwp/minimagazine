@@ -11,12 +11,13 @@
 	<footer>
 		<section id="footerContent" class="container">
 			<div class="footerLogo three columns">
-				<?php			
-					if(get_theme_mod('codeinwp_footerlogo')):
+				<?php
+					$codeinwp_footerlogo = get_theme_mod('codeinwp_footerlogo');
+					if( !empty($codeinwp_footerlogo) ):
 						if(get_theme_mod('codeinwp_footerlogo_text')):
-							echo '<img src="'.get_theme_mod('codeinwp_footerlogo').'" alt="'.get_theme_mod('codeinwp_footerlogo_text').'">';		
+							echo '<img src="'.esc_url($codeinwp_footerlogo).'" alt="'.esc_attr(get_theme_mod('codeinwp_footerlogo_text')).'">';		
 						else:
-							echo '<img src="'.get_theme_mod('codeinwp_footerlogo').'" alt="'.get_bloginfo('name').'">';
+							echo '<img src="'.esc_url($codeinwp_footerlogo).'" alt="'.get_bloginfo('name').'">';
 						endif;
 					endif;
 			
@@ -28,23 +29,23 @@
 					<ul>
 						<?php 
 						if(get_theme_mod('codeinwp_fb')):
-							echo "<li><a href='".get_theme_mod('codeinwp_fb')."' ><i class='icon-facebook-sign'></i></a></li>";	
+							echo "<li><a href='".esc_url(get_theme_mod('codeinwp_fb'))."' ><i class='icon-facebook-sign'></i></a></li>";	
 						endif;
 						
 						if(get_theme_mod('codeinwp_tw')):
-							echo "<li><a href='".get_theme_mod('codeinwp_tw')."' ><i class='icon-twitter-sign'></i></a></li>";	
+							echo "<li><a href='".esc_url(get_theme_mod('codeinwp_tw'))."' ><i class='icon-twitter-sign'></i></a></li>";	
 						endif;
 						
 						if(get_theme_mod('codeinwp_rss')):
-							echo "<li><a href='".get_theme_mod('codeinwp_rss')."' ><i class='icon-rss-sign'></i></a></li>";	
+							echo "<li><a href='".esc_url(get_theme_mod('codeinwp_rss'))."' ><i class='icon-rss-sign'></i></a></li>";	
 						endif;
 						
 						if(get_theme_mod('codeinwp_linkedin')):
-							echo "<li><a href='".get_theme_mod('codeinwp_linkedin')."' ><i class='icon-linkedin-sign'></i></a></li>";	
+							echo "<li><a href='".esc_url(get_theme_mod('codeinwp_linkedin'))."' ><i class='icon-linkedin-sign'></i></a></li>";	
 						endif;
 						
 						if(get_theme_mod('codeinwp_pinterest')):
-							echo "<li><a href='".get_theme_mod('codeinwp_pinterest')."' ><i class='icon-pinterest-sign'></i></a></li>";	
+							echo "<li><a href='".esc_url(get_theme_mod('codeinwp_pinterest'))."' ><i class='icon-pinterest-sign'></i></a></li>";	
 						endif;
 						
 						?>
@@ -57,13 +58,13 @@
 
 				<?php	
 					if(get_theme_mod('codeinwp_copyright')):
-						echo '<span class="copyright">'.get_theme_mod('codeinwp_copyright').'</span>';	
+						echo '<span class="copyright">'.esc_attr(get_theme_mod('codeinwp_copyright')).'</span>';	
 					else:
 						echo '<span class="copyright"> &copy; '.date('Y').' Minimagazine</span>';
 					endif;
 				?>			
 				<div class="copyright">
-				<a href="http://themeisle.com/themes/minimagazine/" target="_blank">Minimagazine</a><?php _e(' powered by ','minimagazine'); ?><a href="http://wordpress.org/" target="_blank"><?php _e('WordPress','minimagazine'); ?></a>
+				<a href="http://themeisle.com/themes/minimagazine/" target="_blank" rel="nofollow">Minimagazine</a><?php _e(' powered by ','minimagazine'); ?><a href="http://wordpress.org/" target="_blank" rel="nofollow"><?php _e('WordPress','minimagazine'); ?></a>
 				</div>	
 			</div><!-- end .footerMetaData -->
 

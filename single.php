@@ -9,13 +9,7 @@ get_header();
 
 ?>
 	<?php while ( have_posts() ) : the_post(); ?>
-	<?php 
-		if(get_theme_mod('minimagazine_header_image')):
-			echo '<section id="headerOuter" style="background:url('.get_theme_mod('minimagazine_header_image').');">';
-		else:
-			echo '<section id="headerOuter" class="tmp">';
-		endif;
-	?>
+	<section id="headerOuter" class="tmp">
 		<header>
 			<div class="headerOuterContent container">
 				<div class="headerContent">
@@ -72,7 +66,7 @@ get_header();
 			<?php minimagazine_related_posts(); ?>
 
 			<section id="commentsSection">
-				<header><h2><?php comments_number( __('No comments','minimagazine'), __('One comment','cp'), '%'.__('Comments','minimagazine') ); ?></h2></header>
+				<header><h2><?php comments_number( __('No comments','minimagazine'), __('One comment','minimagazine'), '%'.__('Comments','minimagazine') ); ?></h2></header>
 				<?php comments_template(); ?>
 				
 

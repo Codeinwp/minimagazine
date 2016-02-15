@@ -70,7 +70,7 @@ if ( post_password_required() )
 
 				// change the title of send button 
 
-				'label_submit'=>'Add comment',
+				'label_submit'=> __( 'Add comment','minimagazine' ),
 
 				'comment_notes_before' => '',
 
@@ -82,16 +82,16 @@ if ( post_password_required() )
 
 				// redefine your own textarea (the comment body)
 
-				'comment_field' => '<div class="inputBlock"><label for="comment">Comment:*</label><textarea id="comment" name="comment"></textarea></div>',
+				'comment_field' => '<div class="inputBlock"><label for="comment">'.__( 'Comment:*','minimagazine' ).'</label><textarea id="comment" name="comment"></textarea></div>',
 
 				'fields' => array(
 				
-				'author' => '<div class="inputBlock">' . '<label for="author">' . __( 'Name*', 'minimagazine' ) . '</label><input  id="author" name="author" type="text" placeholder="Your Name" /> ' . '</div> ',
+				'author' => '<div class="inputBlock">' . '<label for="author">' . __( 'Name*', 'minimagazine' ) . '</label><input  id="author" name="author" type="text" placeholder="'.__( "Your Name","minimagazine" ).'" /> ' . '</div> ',
 								
-				'email' => '<div class="inputBlock">'.'<label for="email">' . __( 'Email*', 'minimagazine' ) . '</label><input id="email" name="email" type="text" placeholder="Your Email" />' . '</div> ',
+				'email' => '<div class="inputBlock">'.'<label for="email">' . __( 'Email*', 'minimagazine' ) . '</label><input id="email" name="email" type="text" placeholder="'.__( "Your Email","minimagazine" ).'" />' . '</div> ',
 				
 			
-				'url' => '<div class="inputBlock">'.'<label for="url"><span>' . __( 'Website', 'minimagazine' ) . '</label><input id="url" name="url" type="text" placeholder="Your Website" />'. '</div>',
+				'url' => '<div class="inputBlock">'.'<label for="url"><span>' . __( 'Website', 'minimagazine' ) . '</label><input id="url" name="url" type="text" placeholder="'.__( "Your Website","minimagazine" ).'" />'. '</div>',
 
 			),
 
